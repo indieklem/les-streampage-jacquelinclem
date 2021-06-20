@@ -1,0 +1,80 @@
+.c-streamer {
+
+    .c-streamer__list {
+        height: calc(66vh - 54px);
+        min-height: calc(32rem - 54px);
+        max-height: calc(100vh - 54px);
+        overflow: auto;
+        
+
+        &:after {
+            content: '';
+            position: sticky;
+            display: block;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            margin: 0;
+            height: 3.2rem;
+            width: 100%;
+            background-image: linear-gradient(180deg, rgba(0,0,0,0.00) 0%, #000000 100%);
+            pointer-events: none;
+        }
+    }
+
+    .c-streamer__name {
+        position: relative;
+        top: .2rem;
+    }
+
+    .c-streamer__item {
+        border-radius: .8rem;
+        color: color("grey-400");
+
+        &.c-streamer__item--live {
+            color: color('white');
+            cursor: pointer;
+            background-color: rgba(color("coton"),0);
+
+            .c-streamer__status {
+                color: color("green-500");
+                background-color: rgba(color("green-500"),.2);
+                animation-duration: .75s;
+                animation-name: live;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: ease-in-out;
+            }
+            .c-streamer__shape {
+                background-color: color("green-500");
+            }
+            &:hover {
+                background-color: rgba(color("coton"),.15);
+            }
+        }
+
+    }
+
+    @keyframes live {
+        0% {
+            background-color: rgba(color("green-500"),.2);
+        }
+        
+        100% {
+            background-color: rgba(color("green-500"),.26);
+        }
+    }
+
+    .c-streamer__status {
+        border-radius: .4rem;
+        color: color("grey-300");
+    }
+
+    .c-streamer__shape {
+        top: -.2rem;
+        width: .8rem;
+        height: .8rem;
+        border-radius: 1.6rem;
+        background-color: color("grey-300");
+    }
+}
