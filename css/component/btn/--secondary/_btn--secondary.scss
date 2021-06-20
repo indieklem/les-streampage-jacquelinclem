@@ -1,0 +1,9 @@
+.c-btn--secondary {
+    background-color: color("grey-light");
+    color: color("blue-dark");
+
+    &:hover {
+        background-color: color("grey-light");
+        opacity: .8;
+    }
+}

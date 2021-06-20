@@ -1,0 +1,78 @@
+/* ===============
+   Grid 
+   =============== */
+
+.container {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+
+  &.container--wide {
+    @include breakpoint('xl') {
+      max-width: 1600px;
+    }
+  }
+  &.container--fluid {
+    width: 100%;
+    max-width: 100%;
+  }
+  &.container--nopadding {
+    padding: 0;
+    
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+
+      > [class*="col"] {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -1.2rem;
+  margin-right: -1.2rem;
+
+  > [class*="col"] {
+    display: block;
+    flex: none;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  > [class*="col-auto"] {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}
+
+@each $theBreakpoint in map-keys($breakpoints) {
+  @include breakpoint($theBreakpoint) {
+
+      $theAbbrev : map-get($breakpoints--abbrev, $theBreakpoint);
+      .col#{$theAbbrev}-16 {width: 16.666666%;}
+      .col#{$theAbbrev}-20 {width: 20%;}
+      .col#{$theAbbrev}-25 {width: 25%;}
+      .col#{$theAbbrev}-33 {width: 33.333333%;}
+      .col#{$theAbbrev}-40 {width: 40%;}
+      .col#{$theAbbrev}-50 {width: 50%;}
+      .col#{$theAbbrev}-60 {width: 60%;}
+      .col#{$theAbbrev}-66 {width: 66%;}
+      .col#{$theAbbrev}-75 {width: 75%;}
+      .col#{$theAbbrev}-80 {width: 80%;}
+      .col#{$theAbbrev}-100 {width: 100%;}
+  }
+}

@@ -1,0 +1,45 @@
+.c-direct {
+    border-top: .1rem solid color("grey-800");
+    border-bottom: .1rem solid color("grey-800");
+    background-image: linear-gradient(135deg, rgba(#2B2B2B,.8) 0%, rgba(#1F1F1F,.8) 100%);
+    box-shadow: inset 0 0 4px 0 rgba(0,0,0,.2);
+    overflow-x: scroll;
+
+    .c-direct__item {
+        position: relative;
+        border-right: .1rem solid color("grey-800");
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+
+        &:last-child {
+            border-right: 0 solid color("grey-800");;
+        }
+
+        &.c-direct__item--les {
+            background-color: rgba(color("coton"),.0);
+            &:hover {
+                background-color: rgba(color("coton"),.15);
+            }
+        }
+
+    }
+
+    .c-direct__teamlogo {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    .c-direct__teamname {
+        letter-spacing: .1rem;
+        white-space: nowrap;
+    }
+
+    .c-direct__webtb {
+        position: relative;
+        height: 8.7rem;
+        width: auto;
+        border-radius: .8rem;
+    }
+
+}
