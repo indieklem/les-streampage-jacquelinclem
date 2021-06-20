@@ -1,9 +1,0 @@
-/* ===============
-   Color 
-   =============== */
-   
-
-
-@function color($color) {
-    @return map-get($colors,$color);
-}

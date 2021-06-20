@@ -1,9 +1,0 @@
-/* ===============
-   Text color
-   =============== */
-
-@each $name, $hex in $colors {
-    .txt-#{$name} { 
-        color: $hex;
-    }
-}

@@ -1,7 +1,0 @@
-# Files
-.DS_Store
-
-# Folders
-.dist
-.sass-cache
-node_modules
