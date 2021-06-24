@@ -46,6 +46,9 @@
         width: 60.7rem;
         height: 47rem;
         background-image: url("images/riven.png");
+        @include retina {
+            background-image: url("images/riven@2x.png");;
+        }
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center bottom;

@@ -12,6 +12,9 @@
         width: 38.4rem;
         max-width: 100%;
         background-image: url("images/cross.png");
+        @include retina {
+            background-image: url("images/cross@2x.png");
+        }
         background-repeat: repeat;
         background-size: 3.6rem;
         background-position: center;
@@ -50,16 +53,26 @@
                 background-color: rgba(color("coton"),0);
             }
         }
+        &:active {
+            .c-tournament__bg {
+                background-color: rgba(color("coton"),0);
+                border: .1rem solid rgba(0,0,0,0.1);
+            }
+        }
     } 
 
     .c-tournament__bg {
         border-radius: 1.6rem;
         background-color: rgba(0,0,0,0.05);
+        border: .1rem solid rgba(color("coton"),1);
+        height: 22.2rem;
     }
 
     .c-tournament__img {
         display: block;
-        width: 100%;
+        max-width: 100%;
+        max-height: 70%;
+        width: auto;
         height: auto;
     }
 

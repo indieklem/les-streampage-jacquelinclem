@@ -144,6 +144,9 @@ h1, h2, h3, h4, h5, h6 {
    Z-index 
    =============== */
 /* ===============
+   Responsive 
+   =============== */
+/* ===============
    Import utilities 
    =============== */
 /* ===============
@@ -4799,85 +4802,6 @@ h1, h2, h3, h4, h5, h6 {
 /* ===============
    Component
    =============== */
-/* ===============
-    Component button
-    =============== */
-.c-btn {
-  position: relative;
-  display: inline-block;
-  border: 0;
-  cursor: pointer;
-  padding: 0 1.6rem;
-  border-radius: 0.8rem;
-  width: auto;
-  min-height: 4.8rem;
-  text-align: center;
-  text-decoration: none;
-  line-height: 4.8rem;
-  letter-spacing: 0.05rem;
-  color: #fff;
-  font-size: 1.6rem;
-  font-family: "Spartan";
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.c-btn:focus {
-  opacity: 1;
-}
-.c-btn:active {
-  text-decoration: none;
-}
-.c-btn:hover, .c-btn:active, .c-btn:focus {
-  text-decoration: none;
-}
-
-/*--------------------
-ELEMENT
---------------------*/
-/*--------------------
-MODIFIER
---------------------*/
-.c-btn--secondary:hover {
-  opacity: 0.8;
-}
-
-.c-btn--size-small {
-  min-height: 30px;
-  line-height: 30px;
-}
-
-.c-btn--size-expand {
-  width: 100%;
-}
-
-@media (min-width: 576px) {
-  .xs-expand {
-    width: 100%;
-  }
-}
-@media (min-width: 768px) {
-  .sm-expand {
-    width: 100%;
-  }
-}
-@media (min-width: 992px) {
-  .md-expand {
-    width: 100%;
-  }
-}
-@media (min-width: 1200px) {
-  .lg-expand {
-    width: 100%;
-  }
-}
-.c-nav {
-  height: 60px;
-  background-color: #000;
-}
-
 .c-stream {
   position: relative;
   z-index: 1;
@@ -4900,7 +4824,7 @@ MODIFIER
   position: sticky;
   display: block;
   z-index: 1;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   margin: 0;
   height: 3.2rem;
@@ -4936,6 +4860,9 @@ MODIFIER
 .c-streamer .c-streamer__item.c-streamer__item--live:hover {
   background-color: rgba(251, 248, 241, 0.15);
 }
+.c-streamer .c-streamer__item.c-streamer__item--live:active {
+  background-color: rgba(251, 248, 241, 0.22);
+}
 @keyframes live {
   0% {
     background-color: rgba(61, 174, 114, 0.2);
@@ -4968,20 +4895,23 @@ MODIFIER
   border-right: 0.1rem solid #404040;
   text-decoration: none;
   color: white;
-  cursor: pointer;
 }
 .c-direct .c-direct__item:last-child {
   border-right: 0 solid #404040;
 }
 .c-direct .c-direct__item.c-direct__item--les {
   background-color: rgba(251, 248, 241, 0);
+  cursor: pointer;
 }
 .c-direct .c-direct__item.c-direct__item--les:hover {
   background-color: rgba(251, 248, 241, 0.15);
 }
+.c-direct .c-direct__item.c-direct__item--les:active {
+  background-color: rgba(251, 248, 241, 0.22);
+}
 .c-direct .c-direct__teamlogo {
-  width: 2.4rem;
-  height: 2.4rem;
+  max-width: 2rem;
+  height: 2rem;
 }
 .c-direct .c-direct__teamname {
   letter-spacing: 0.1rem;
@@ -4989,7 +4919,7 @@ MODIFIER
 }
 .c-direct .c-direct__webtb {
   position: relative;
-  height: 8.7rem;
+  height: 8.3rem;
   width: auto;
   border-radius: 0.8rem;
 }
@@ -5012,6 +4942,11 @@ MODIFIER
   background-size: 3.6rem;
   background-position: center;
   pointer-events: none;
+}
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
+  .c-tournament:after {
+    background-image: url("images/cross@2x.png");
+  }
 }
 .c-tournament:before {
   position: absolute;
@@ -5046,13 +4981,21 @@ MODIFIER
 .c-tournament .c-tournament__item:hover .c-tournament__bg {
   background-color: rgba(251, 248, 241, 0);
 }
+.c-tournament .c-tournament__item:active .c-tournament__bg {
+  background-color: rgba(251, 248, 241, 0);
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
 .c-tournament .c-tournament__bg {
   border-radius: 1.6rem;
   background-color: rgba(0, 0, 0, 0.05);
+  border: 0.1rem solid #fbf8f1;
+  height: 22.2rem;
 }
 .c-tournament .c-tournament__img {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  max-height: 70%;
+  width: auto;
   height: auto;
 }
 .c-tournament .c-tournament__arrow {
@@ -5071,13 +5014,15 @@ MODIFIER
   z-index: 5;
 }
 .c-actus .c-actus__link {
-  display: block;
   text-decoration: none;
   color: #000;
 }
 .c-actus .c-actus__link:hover .c-actus__title {
   color: #FC000D;
   text-decoration: underline;
+}
+.c-actus .c-actus__link:active .c-actus__title {
+  opacity: 0.7;
 }
 
 /* ===============
@@ -5138,6 +5083,11 @@ MODIFIER
   background-position: center bottom;
   opacity: 0.1;
   pointer-events: none;
+}
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
+  .p-stream .p-stream__champion {
+    background-image: url("images/riven@2x.png");
+  }
 }
 @media (min-width: 992px) {
   .p-stream .p-stream__champion {
