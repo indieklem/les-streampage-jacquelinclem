@@ -5012,6 +5012,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .c-actus {
   z-index: 5;
+  width: 100%;
+  overflow: hidden;
 }
 .c-actus .c-actus__link {
   text-decoration: none;
@@ -5076,6 +5078,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   right: 0;
   width: 60.7rem;
+  max-width: 100%;
   height: 47rem;
   background-image: url("images/riven.png");
   background-repeat: no-repeat;
